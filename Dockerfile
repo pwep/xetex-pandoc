@@ -30,7 +30,7 @@ RUN apt-get update && \
   apt-get autoclean && apt-get --purge --yes autoremove && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN curl -L -O https://github.com/jgm/pandoc/releases/download/1.17.1/pandoc-1.17.1.2-amd64.deb && \
+RUN curl -s -S -L -O https://github.com/jgm/pandoc/releases/download/1.17.1/pandoc-1.17.1.2-amd64.deb && \
   dpkg -i pandoc-1.17.1.2-amd64.deb && \
   rm pandoc-1.17.1.2-amd64.deb
 
