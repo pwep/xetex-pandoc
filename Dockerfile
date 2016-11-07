@@ -28,7 +28,7 @@ RUN apt-get update && \
   fontconfig \
   texlive-xetex \
 # python and gcc for pandoc filters
-  python python-dev gcc && \
+  python-pip python-dev gcc && \
   easy_install -U setuptools && \
   apt-get autoclean && apt-get --purge --yes autoremove && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
