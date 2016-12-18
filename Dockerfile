@@ -10,13 +10,9 @@ RUN apt-get update && \
   curl \
   make \
   git \
-# pandoc \
-# pandoc-citeproc \
   ca-certificates \
   lmodern \
   texlive-latex-base \
-# texlive-generic-extra \
-# texlive-fonts-extra \
   texlive-fonts-recommended \
   texlive-generic-recommended \
   texlive-lang-english \
@@ -27,16 +23,18 @@ RUN apt-get update && \
   biber \
   fontconfig \
   texlive-xetex \
-# python and gcc for pandoc filters
   python-pip python-dev gcc && \
   pip install setuptools --upgrade && \
   pip install pandoc-fignos && \
   pip install pandoc-eqnos && \
   pip install pandoc-tablenos && \
-  apt-get remove python-dev gcc && \
+  apt-get remove --yes --no-install-recommends python-dev gcc && \
   apt-get autoclean && \
   apt-get --purge --yes autoremove && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  # REMOVED
+  # texlive-generic-extra \
+  # texlive-fonts-extra 
  
 RUN curl -s -S -L -O https://github.com/jgm/pandoc/releases/download/1.19.1/pandoc-1.19.1-1-amd64.deb && \
   dpkg -i pandoc-1.19.1-1-amd64.deb && \
