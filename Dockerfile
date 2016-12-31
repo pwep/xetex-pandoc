@@ -1,7 +1,7 @@
 FROM debian:latest
 MAINTAINER Peter Phillips <peter.phillips@cumbria.ac.uk>
 
-LABEL version="1.18.2"
+LABEL version="1.19.1"
 
 ENV DEBIAN_FRONTEND noninteractive
 
