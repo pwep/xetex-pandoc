@@ -36,7 +36,7 @@ RUN apt-get update && \
   # texlive-generic-extra \
   # texlive-fonts-extra 
  
-RUN curl -s -S -L -O https://github.com/jgm/pandoc/releases/download/1.19.1/pandoc-1.19.2.1-1-amd64.deb && \
+RUN curl -s -S -L -O https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb && \
   dpkg -i pandoc-1.19.1-1-amd64.deb && \
   rm pandoc-1.19.1-1-amd64.deb
 
