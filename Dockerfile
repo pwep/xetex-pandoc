@@ -23,12 +23,18 @@ RUN apt-get update && \
   biber \
   fontconfig \
   texlive-xetex \
-  python-pip python-dev gcc && \
+  python-pip python-dev gcc g++ cmake && \
   pip install setuptools --upgrade && \
   pip install pandoc-fignos && \
   pip install pandoc-eqnos && \
   pip install pandoc-tablenos && \
-  apt-get remove --yes --no-install-recommends python-dev python-pip gcc && \
+  cd /tmp && \
+  git clone https://github.com/fletcher/MultiMarkdown-5.git && \
+  cd MultiMarkdown-5 && \
+  ./link_git_modules && ./update_git_modules && \
+  make && cd ./build && make && make install && \
+  cd /tmp && \
+  apt-get remove --yes --no-install-recommends python-dev python-pip gcc g++ cmake && \
   apt-get autoclean && \
   apt-get --purge --yes autoremove && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
