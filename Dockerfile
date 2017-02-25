@@ -23,6 +23,9 @@ RUN apt-get update && \
   biber \
   fontconfig \
   texlive-xetex \
+  texlive-generic-extra \
+  fonts-linuxlibertine \
+  fonts-texgyre \
   python-pip python-dev gcc g++ cmake && \
   pip install setuptools --upgrade && \
   pip install pandoc-fignos && \
@@ -39,7 +42,7 @@ RUN apt-get update && \
   apt-get --purge --yes autoremove && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
   # REMOVED
-  # texlive-generic-extra \
+  # 
   # texlive-fonts-extra 
  
 RUN curl -s -S -L -O https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb && \
