@@ -40,7 +40,9 @@ RUN apt-get update && \
   apt-get remove --yes --no-install-recommends python-dev python-pip gcc g++ cmake && \
   apt-get autoclean && \
   apt-get --purge --yes autoremove && \
-  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+  rm -rf /usr/share/doc/*
+
   # REMOVED
   # 
   # texlive-fonts-extra 
