@@ -1,6 +1,6 @@
 FROM debian:latest
-MAINTAINER Peter Phillips <peter.phillips@cumbria.ac.uk>
 
+LABEL maintainer="Peter Phillips <peter.phillips@cumbria.ac.uk>"
 LABEL version="1.19.2.1-1"
 
 ENV DEBIAN_FRONTEND noninteractive
