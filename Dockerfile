@@ -58,4 +58,3 @@ RUN curl -s -S -L -O https://github.com/jgm/pandoc/releases/download/1.19.2.1/pa
 
 # Export the output data
 WORKDIR /data
-VOLUME ["/data"]
